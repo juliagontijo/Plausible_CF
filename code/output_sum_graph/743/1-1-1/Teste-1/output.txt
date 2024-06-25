@@ -1,0 +1,122 @@
+L1 = 1  L2 = 1  L3 = 1
+
+ -- Original instance - Class 0 -- 
+account_check_status             1
+duration_in_month               24
+credit_history                   1
+purpose                          3
+credit_amount                 2483
+savings                          3
+present_emp_since                3
+installment_as_income_perc       4
+personal_status_sex              3
+other_debtors                    1
+present_res_since                4
+property                         1
+age                             22
+other_installment_plans          3
+housing                          2
+credits_this_2                   1
+job                              3
+people_under_maintenance         1
+telephone                        2
+foreign_worker                   1
+Name: 0, dtype: int64
+Original Instance row number = 743
+
+
+np.logspace( -1, 1, 100 )
+
+Best kernel:gaussian
+Best bandwidth:0.17475284000076838
+
+
+
+ ==================== CONTRAFACTUAL RESULTS ==================== 
+
+
+Contrafactual 1
+Distance = 0.4714045207910317 | NumChanges = 2 | Density = 0.31055076520988933
+Contrafactual 2
+Distance = 0.4714045207910316 | NumChanges = 2 | Density = 1.2786445762500083
+Contrafactual 3
+Distance = 0.6009252125773316 | NumChanges = 2 | Density = 0.008686792100822247
+Contrafactual 4
+Distance = 0.6009252125773316 | NumChanges = 2 | Density = 0.012868125638006683
+Contrafactual 5
+Distance = 0.6009252125773316 | NumChanges = 2 | Density = 0.016184136523167254
+
+Average of all counterfactuals 
+Distance = 0.5491169358628116 | NumChanges = 2.0 | Density = 0.32538687914437875
+
+Final Counterfactuals Point Density
+[array([0.00152951]), array([4.05115594e-07]), array([2.63347517e-05]), array([2.66737873e-05]), array([0.00145242])]
+Average density: 0.0006070680050734398
+
+
+################ GRAPH BEGGIN ################ 
+
+
+
+np.logspace( -1, 1, 100 )
+
+Best kernel:gaussian
+Best bandwidth:0.17475284000076838
+
+
+ ############## FINAL RECOMMENDATIONS ############## 
+
+------- PATH 0 = [743, 1000] -------- 
+POINT: Feature: 1 | Feature: 24 | Feature: 1 | Feature: 3 | Feature: 2483 | Feature: 3 | Feature: 3 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 1 | Feature: 22 | Feature: 3 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+POINT: Feature: 1 | Feature: 24 | Feature: 1 | Feature: 0 | Feature: 2483 | Feature: 2 | Feature: 3 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 1 | Feature: 22 | Feature: 3 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+
+
+------- PATH 1 = [743, 1001] -------- 
+POINT: Feature: 1 | Feature: 24 | Feature: 1 | Feature: 3 | Feature: 2483 | Feature: 3 | Feature: 3 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 1 | Feature: 22 | Feature: 3 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+POINT: Feature: 1 | Feature: 24 | Feature: 1 | Feature: 0 | Feature: 2483 | Feature: 3 | Feature: 3 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 22 | Feature: 3 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+
+
+------- PATH 2 = [743, 1002] -------- 
+POINT: Feature: 1 | Feature: 24 | Feature: 1 | Feature: 3 | Feature: 2483 | Feature: 3 | Feature: 3 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 1 | Feature: 22 | Feature: 3 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+POINT: Feature: 1 | Feature: 24 | Feature: 1 | Feature: 0 | Feature: 2483 | Feature: 3 | Feature: 3 | Feature: 4 | Feature: 2 | Feature: 1 | Feature: 4 | Feature: 1 | Feature: 22 | Feature: 3 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+
+
+------- PATH 3 = [743, 1003] -------- 
+POINT: Feature: 1 | Feature: 24 | Feature: 1 | Feature: 3 | Feature: 2483 | Feature: 3 | Feature: 3 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 1 | Feature: 22 | Feature: 3 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+POINT: Feature: 1 | Feature: 24 | Feature: 1 | Feature: 0 | Feature: 2483 | Feature: 3 | Feature: 3 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 1 | Feature: 22 | Feature: 3 | Feature: 2 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 2 | Feature: 1 | 
+
+
+------- PATH 4 = [743, 1004] -------- 
+POINT: Feature: 1 | Feature: 24 | Feature: 1 | Feature: 3 | Feature: 2483 | Feature: 3 | Feature: 3 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 1 | Feature: 22 | Feature: 3 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+POINT: Feature: 1 | Feature: 24 | Feature: 1 | Feature: 3 | Feature: 2483 | Feature: 2 | Feature: 3 | Feature: 4 | Feature: 2 | Feature: 1 | Feature: 4 | Feature: 1 | Feature: 22 | Feature: 3 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+
+
+
+
+
+******** Result obtained ********
+
+
+         Counterfactual 1         
+purpose                           0
+savings                           2
+
+
+         Counterfactual 2         
+purpose                           0
+present_res_since                 3
+
+
+         Counterfactual 3         
+purpose                           0
+personal_status_sex               2
+
+
+         Counterfactual 4         
+purpose                           0
+job                               2
+
+
+         Counterfactual 5         
+savings                           2
+personal_status_sex               2

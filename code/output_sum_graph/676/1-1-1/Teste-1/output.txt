@@ -1,0 +1,123 @@
+L1 = 1  L2 = 1  L3 = 1
+
+ -- Original instance - Class 0 -- 
+account_check_status             4
+duration_in_month               24
+credit_history                   4
+purpose                          3
+credit_amount                 5150
+savings                          1
+present_emp_since                5
+installment_as_income_perc       4
+personal_status_sex              3
+other_debtors                    1
+present_res_since                4
+property                         3
+age                             33
+other_installment_plans          1
+housing                          2
+credits_this_2                   1
+job                              3
+people_under_maintenance         1
+telephone                        2
+foreign_worker                   1
+Name: 0, dtype: int64
+Original Instance row number = 676
+
+
+np.logspace( -1, 1, 100 )
+
+Best kernel:gaussian
+Best bandwidth:0.17475284000076838
+
+
+
+ ==================== CONTRAFACTUAL RESULTS ==================== 
+
+
+Contrafactual 1
+Distance = 1.0955999577777196 | NumChanges = 2 | Density = 7.4061690285681e-05
+Contrafactual 2
+Distance = 1.6004559363871782 | NumChanges = 6 | Density = 6.196900036803995e-08
+
+Average of all counterfactuals 
+Distance = 1.348027947082449 | NumChanges = 4.0 | Density = 3.706182964302452e-05
+
+Final Counterfactuals Point Density
+[array([8.1509016e-08]), array([3.08415602e-14])]
+Average density: 4.075452340169431e-08
+
+
+################ GRAPH BEGGIN ################ 
+
+
+
+np.logspace( -1, 1, 100 )
+
+Best kernel:gaussian
+Best bandwidth:0.17475284000076838
+
+
+ ############## FINAL RECOMMENDATIONS ############## 
+
+------- PATH 0 = [676, 293, 814, 54, 13, 184, 997] -------- 
+POINT: Feature: 4 | Feature: 24 | Feature: 4 | Feature: 3 | Feature: 5150 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 3 | Feature: 33 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+POINT: Feature: 4 | Feature: 24 | Feature: 4 | Feature: 3 | Feature: 4796 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 3 | Feature: 33 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 1 | Feature: 1 | 
+POINT: Feature: 4 | Feature: 24 | Feature: 2 | Feature: 3 | Feature: 3931 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 3 | Feature: 33 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 1 | Feature: 1 | 
+POINT: Feature: 4 | Feature: 24 | Feature: 2 | Feature: 3 | Feature: 2225 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 3 | Feature: 33 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 1 | Feature: 1 | 
+POINT: Feature: 4 | Feature: 24 | Feature: 2 | Feature: 3 | Feature: 1199 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 3 | Feature: 33 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 1 | Feature: 1 | 
+POINT: Feature: 4 | Feature: 18 | Feature: 2 | Feature: 3 | Feature: 884 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 3 | Feature: 36 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 1 | Feature: 1 | 
+POINT: Feature: 4 | Feature: 12 | Feature: 2 | Feature: 4 | Feature: 804 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 3 | Feature: 38 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 1 | Feature: 1 | 
+
+
+------- PATH 1 = [676, 293, 814, 54, 998] -------- 
+POINT: Feature: 4 | Feature: 24 | Feature: 4 | Feature: 3 | Feature: 5150 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 3 | Feature: 33 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+POINT: Feature: 3 | Feature: 42 | Feature: 4 | Feature: 3 | Feature: 4796 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 4 | Feature: 33 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+POINT: Feature: 1 | Feature: 42 | Feature: 2 | Feature: 3 | Feature: 3931 | Feature: 1 | Feature: 4 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 4 | Feature: 33 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+POINT: Feature: 1 | Feature: 42 | Feature: 2 | Feature: 3 | Feature: 2225 | Feature: 1 | Feature: 4 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 4 | Feature: 33 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+POINT: Feature: 1 | Feature: 45 | Feature: 2 | Feature: 4 | Feature: 1845 | Feature: 1 | Feature: 3 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 4 | Feature: 23 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+
+
+------- PATH 2 = [676, 999] -------- 
+POINT: Feature: 4 | Feature: 24 | Feature: 4 | Feature: 3 | Feature: 5150 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 3 | Feature: 33 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+POINT: Feature: 2 | Feature: 45 | Feature: 4 | Feature: 1 | Feature: 4576 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 3 | Feature: 27 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 1 | Feature: 1 | 
+
+
+------- PATH 3 = [676, 501, 685, 373, 374, 95, 1000] -------- 
+POINT: Feature: 4 | Feature: 24 | Feature: 4 | Feature: 3 | Feature: 5150 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 3 | Feature: 33 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+POINT: Feature: 4 | Feature: 24 | Feature: 4 | Feature: 3 | Feature: 5493 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 3 | Feature: 33 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+POINT: Feature: 4 | Feature: 24 | Feature: 4 | Feature: 3 | Feature: 6527 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 3 | Feature: 33 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+POINT: Feature: 4 | Feature: 24 | Feature: 4 | Feature: 3 | Feature: 13756 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 3 | Feature: 33 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+POINT: Feature: 2 | Feature: 24 | Feature: 4 | Feature: 3 | Feature: 14782 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 3 | Feature: 33 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+POINT: Feature: 2 | Feature: 24 | Feature: 4 | Feature: 3 | Feature: 15945 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 3 | Feature: 33 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+POINT: Feature: 2 | Feature: 24 | Feature: 4 | Feature: 3 | Feature: 16509 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 3 | Feature: 33 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+
+
+------- PATH 4 = [676, 501, 685, 373, 374, 95, 1001] -------- 
+POINT: Feature: 4 | Feature: 24 | Feature: 4 | Feature: 3 | Feature: 5150 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 3 | Feature: 33 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 2 | Feature: 1 | 
+POINT: Feature: 4 | Feature: 24 | Feature: 2 | Feature: 3 | Feature: 5493 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 4 | Feature: 33 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 1 | Feature: 1 | 
+POINT: Feature: 4 | Feature: 24 | Feature: 2 | Feature: 3 | Feature: 6527 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 4 | Feature: 33 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 1 | Feature: 1 | 
+POINT: Feature: 4 | Feature: 24 | Feature: 2 | Feature: 3 | Feature: 13756 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 4 | Feature: 33 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 1 | Feature: 1 | 
+POINT: Feature: 4 | Feature: 24 | Feature: 2 | Feature: 3 | Feature: 14782 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 4 | Feature: 33 | Feature: 1 | Feature: 2 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 1 | Feature: 1 | 
+POINT: Feature: 4 | Feature: 24 | Feature: 2 | Feature: 3 | Feature: 15945 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 4 | Feature: 33 | Feature: 1 | Feature: 1 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 1 | Feature: 1 | 
+POINT: Feature: 4 | Feature: 22 | Feature: 2 | Feature: 3 | Feature: 16900 | Feature: 1 | Feature: 5 | Feature: 4 | Feature: 3 | Feature: 1 | Feature: 4 | Feature: 4 | Feature: 33 | Feature: 1 | Feature: 1 | Feature: 1 | Feature: 3 | Feature: 1 | Feature: 0 | Feature: 1 | 
+
+
+
+
+
+******** Result obtained ********
+
+
+         Counterfactual 1         
+account_check_status              2
+credit_amount                 16509
+
+
+         Counterfactual 2         
+duration_in_month                22
+credit_history                    2
+credit_amount                 16900
+property                          4
+housing                           1
+telephone                         0

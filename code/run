@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -ex
+
+# This is the master script for the capsule. When you click "Reproducible Run", the code in this file will execute.
+#python -u test_csse_german.py "$@"
+python -u test_csse_german_2d.py "$@"
+
+# The previous version of this file was commented-out and follows below:
+#
+#python -u test_csse_compas.py "$@"
+# 
+# # The previous version of this file was commented-out and follows below:
+# #
+# # python -u csse_evaluation_german.py "$@"
+# # 
+# # # The previous version of this file was commented-out and follows below:
+# # #
+# # # python -u csse_evaluation_compas.py "$@"
+# # # 
+# # # 
+# # # 
+# # 
+# 

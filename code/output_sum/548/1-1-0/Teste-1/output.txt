@@ -1,0 +1,110 @@
+L1 = 1  L2 = 1  L3 = 0
+
+ -- Original instance - Class B -- 
+id                         923169.000000
+radius_mean                     9.683000
+texture_mean                   19.340000
+perimeter_mean                 61.050000
+area_mean                     285.700000
+smoothness_mean                 0.084910
+compactness_mean                0.050300
+concavity_mean                  0.023370
+concave points_mean             0.009615
+symmetry_mean                   0.158000
+fractal_dimension_mean          0.062350
+radius_se                       0.295700
+texture_se                      1.363000
+perimeter_se                    2.054000
+area_se                        18.240000
+smoothness_se                   0.007440
+compactness_se                  0.011230
+concavity_se                    0.023370
+concave points_se               0.009615
+symmetry_se                     0.022030
+fractal_dimension_se            0.004154
+radius_worst                   10.930000
+texture_worst                  25.590000
+perimeter_worst                69.100000
+area_worst                    364.200000
+smoothness_worst                0.119900
+compactness_worst               0.095460
+concavity_worst                 0.093500
+concave points_worst            0.038460
+symmetry_worst                  0.255200
+fractal_dimension_worst         0.079200
+Name: 0, dtype: float64
+Original Instance row number = 548
+
+
+np.logspace( -1, 1, 100 )
+
+Best kernel:gaussian
+Best bandwidth:0.1
+
+
+
+ ==================== CONTRAFACTUAL RESULTS ==================== 
+
+
+Contrafactual 1
+Distance = 1.1742616167751208 | NumChanges = 4 | Density = 2.037187064522066
+Contrafactual 2
+Distance = 1.4324647316212957 | NumChanges = 4 | Density = 4.140300562329496e-51
+Contrafactual 3
+Distance = 1.5357175306653676 | NumChanges = 4 | Density = 2.5505584404475883e-57
+Contrafactual 4
+Distance = 1.4749402985265259 | NumChanges = 5 | Density = 6.2889496204451296e-15
+Contrafactual 5
+Distance = 1.564725366448997 | NumChanges = 5 | Density = 0.5190350688897691
+
+Average of all counterfactuals 
+Distance = 1.4364219088074612 | NumChanges = 4.4 | Density = 0.5112444266823684
+
+Final Counterfactuals Point Density
+[array([3.05995632e-17]), array([0.32733906]), array([2.88986925e-26]), array([1.96775356]), array([1.13342485e-43])]
+Average density: 0.4590185237825849
+
+
+################ GRAPH BEGGIN ################ 
+
+
+
+
+******** Result obtained ********
+
+
+         Counterfactual 1         
+texture_mean                  21.51
+area_se                       52.75
+radius_worst                  28.03
+area_worst                    2668.78
+
+
+         Counterfactual 2         
+area_se                       52.75
+radius_worst                  28.03
+area_worst                    2668.78
+concave points_worst           0.23
+
+
+         Counterfactual 3         
+area_se                       52.75
+radius_worst                  28.03
+area_worst                    2668.78
+concavity_worst                1.16
+
+
+         Counterfactual 4         
+area_se                       52.75
+perimeter_worst               128.89
+area_worst                    2668.78
+smoothness_worst               0.15
+concave points_worst           0.23
+
+
+         Counterfactual 5         
+area_mean                     892.43
+area_se                       52.75
+radius_worst                  28.03
+area_worst                    2668.78
+compactness_worst              0.74

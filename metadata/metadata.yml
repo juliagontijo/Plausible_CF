@@ -1,0 +1,22 @@
+metadata_version: 1
+name: 'Copy of CSSE: An Agnostic Method of Counterfactual, Selected, and Social Explanations'
+description: CSSE is a counterfactual explanation method that works with tabular data
+  and classification problems with binary output.
+tags:
+- Counterfactual explanations
+- Interpretability
+- Machine learning
+- eXplainable Artificial Intelligence
+authors:
+- name: Marcelo de Sousa Balbino
+  affiliations:
+  - name: Centro Federal de Educação Tecnológica de Minas Gerais
+- name: Luis Enrique Zárate Gálvez
+  affiliations:
+  - name: Pontifícia Universidade Católica de Minas Gerais
+- name: Cristiane Neri Nobre
+  affiliations:
+  - name: Pontifícia Universidade Católica de Minas Gerais
+corresponding_contributor:
+  name: Marcelo de Sousa Balbino
+  email: marcelobalbino@cefetmg.br

@@ -1,0 +1,78 @@
+L1 = 0.2  L2 = 0.2  L3 = 0.4
+
+ -- Original instance - Class M -- 
+id                         845636.000000
+radius_mean                    16.020000
+texture_mean                   23.240000
+perimeter_mean                102.700000
+area_mean                     797.800000
+smoothness_mean                 0.082060
+compactness_mean                0.066690
+concavity_mean                  0.032990
+concave points_mean             0.033230
+symmetry_mean                   0.152800
+fractal_dimension_mean          0.056970
+radius_se                       0.379500
+texture_se                      1.187000
+perimeter_se                    2.466000
+area_se                        40.510000
+smoothness_se                   0.004029
+compactness_se                  0.009269
+concavity_se                    0.011010
+concave points_se               0.007591
+symmetry_se                     0.014600
+fractal_dimension_se            0.003042
+radius_worst                   19.190000
+texture_worst                  33.880000
+perimeter_worst               123.800000
+area_worst                   1150.000000
+smoothness_worst                0.118100
+compactness_worst               0.155100
+concavity_worst                 0.145900
+concave points_worst            0.099750
+symmetry_worst                  0.294800
+fractal_dimension_worst         0.084520
+Name: 0, dtype: float64
+Original Instance row number = 10
+
+
+np.logspace( -1, 1, 100 )
+
+Best kernel:gaussian
+Best bandwidth:0.1
+
+
+
+ ==================== CONTRAFACTUAL RESULTS ==================== 
+
+
+Contrafactual 1
+Distance = 1.3066679973153492 | NumChanges = 2 | Density = 47.57235930227563
+Contrafactual 2
+Distance = 1.3506131518508255 | NumChanges = 3 | Density = 314281.74061665207
+
+Average of all counterfactuals 
+Distance = 1.3286405745830874 | NumChanges = 2.5 | Density = 157164.65648797716
+
+Final Counterfactuals Point Density
+[array([17.90974714]), array([4.8865156e-14])]
+Average density: 8.954873567898709
+
+
+################ GRAPH BEGGIN ################ 
+
+
+
+
+******** Result obtained ********
+
+
+         Counterfactual 1         
+radius_worst                  15.38
+texture_worst                 16.96
+
+
+         Counterfactual 2         
+texture_mean                  16.61
+perimeter_mean                148.86
+radius_worst                  16.06

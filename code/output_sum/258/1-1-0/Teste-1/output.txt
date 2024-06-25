@@ -1,0 +1,36 @@
+L1 = 1  L2 = 1  L3 = 0
+
+ -- Original instance - Class M -- 
+id                         887181.000000
+radius_mean                    15.660000
+texture_mean                   23.200000
+perimeter_mean                110.200000
+area_mean                     773.500000
+smoothness_mean                 0.110900
+compactness_mean                0.311400
+concavity_mean                  0.317600
+concave points_mean             0.137700
+symmetry_mean                   0.249500
+fractal_dimension_mean          0.081040
+radius_se                       1.292000
+texture_se                      2.454000
+perimeter_se                   10.120000
+area_se                       138.500000
+smoothness_se                   0.012360
+compactness_se                  0.059950
+concavity_se                    0.082320
+concave points_se               0.030240
+symmetry_se                     0.023370
+fractal_dimension_se            0.006042
+radius_worst                   19.850000
+texture_worst                  31.640000
+perimeter_worst               143.700000
+area_worst                   1226.000000
+smoothness_worst                0.150400
+compactness_worst               0.517200
+concavity_worst                 0.618100
+concave points_worst            0.246200
+symmetry_worst                  0.327700
+fractal_dimension_worst         0.101900
+Name: 0, dtype: float64
+Original Instance row number = 258
