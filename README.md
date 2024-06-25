@@ -1,5 +1,5 @@
-# CSSE
-CSSE is a counterfactual explanation method that works with tabular data and classification problems with binary output. The method is implemented in Python. Briefly, to use the method, the user must:
+# Plausible Counterfactual Generator
+This is a counterfactual explanation method that works with tabular data and classification problems with binary output. The method is implemented in Python. Briefly, to use the method, the user must:
 
 1) Import the method
 
