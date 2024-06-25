@@ -16,7 +16,7 @@ from prepare_dataset import *
 
 def main():
     # Read Dataset German
-    df = prepare_KC2_dataset("KC2.csv", "/Users/juliagontijolopes/Desktop/CSSE_Original/data/")
+    df = prepare_KC2_dataset("KC2.csv", "/data/")
     MOCKED_INDEX = 672
     original_instance = df.iloc[MOCKED_INDEX].copy()
 

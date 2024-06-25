@@ -1,6 +1,0 @@
-
-
-np.logspace( -1, 1, 100 )
-
-Best kernel:gaussian
-Best bandwidth:0.14508287784959398

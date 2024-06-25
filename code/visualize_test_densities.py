@@ -159,7 +159,7 @@ def plot_mean_densities_for_group_point(densities, first_param, second_param):
     plt.close()
 
 def main():
-    base_folder = "/Users/juliagontijolopes/Desktop/TRYING_DENSITY/code/output_" + sumsub  # Replace with your base folder path
+    base_folder = "/code/output_" + sumsub  # Replace with your base folder path
     # base_folder = "/Users/juliagontijolopes/Desktop/VERTEBRAL_COLUMN_50/output_" + sumsub
     densities = extract_densities(base_folder)
 

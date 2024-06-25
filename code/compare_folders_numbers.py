@@ -74,7 +74,7 @@ def find_instances_with_largest_mean_density(densities, first_param, second_para
     return sorted_instances
 
 def main():
-    base_folder = "/Users/juliagontijolopes/Desktop/TCC-Final/TRYING_DENSITY/code/output_sum"  # Replace with your base folder path
+    base_folder = "/code/output_sum"  # Replace with your base folder path
     densities_sum = extract_densities(base_folder)
 
     for key, value in densities_sum.items():
