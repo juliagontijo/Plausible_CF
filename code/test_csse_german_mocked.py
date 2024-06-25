@@ -16,13 +16,13 @@ from prepare_dataset import *
 
 def main():
     # Read Dataset German
-    df = prepare_breast_coimbra_dataset("breast_coimbra.csv", "/data/")
-    MOCKED_INDEX = 20
+    df = prepare_german_dataset("generated_german_credit.csv", "/data/")
+    MOCKED_INDEX = 676
     original_instance = df.iloc[MOCKED_INDEX].copy()
 
     #Get the input features
     columns = df.columns
-    class_name = 'Classification' # Classification = 0 = "Good class" / Classification = 1 = "Bad class" 
+    class_name = 'default' # default = 0 = "Good class" / default = 1 = "Bad class" 
     columns_tmp = list(columns)
     columns_tmp.remove(class_name)
     mask = df.index != MOCKED_INDEX

@@ -16,7 +16,7 @@ from csse import density
 from prepare_dataset import *
 
 def main():
-    df = prepare_german_dataset("generated_german_credit_with_cf.csv", "/Users/juliagontijolopes/Desktop/TRYING_DENSITY/data/")
+    df = prepare_german_dataset("generated_german_credit_with_cf.csv", "/data/")
     MOCKED_INDEX = 379
     original_instance = df.iloc[MOCKED_INDEX].copy()
 

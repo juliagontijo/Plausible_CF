@@ -74,7 +74,7 @@ def run_test(MOCKED_INDEX, L1, L2, L3, df, columns_tmp, class_name):
     print("Test completed for MOCKED_INDEX:", MOCKED_INDEX, "with L3 =", L3)
 
 def main():
-    df = prepare_breast_winsconsin_dataset("breast_winsconsin.csv", "/Users/juliagontijolopes/Desktop/TCC-Final/CSSE_Original/data/")
+    df = prepare_breast_winsconsin_dataset("breast_winsconsin.csv", "/data/")
     columns = df.columns
     class_name = 'diagnosis'
     columns_tmp = list(columns)

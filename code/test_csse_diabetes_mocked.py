@@ -11,40 +11,27 @@ import matplotlib as mpl
 from matplotlib.pyplot import cm
 import seaborn as sn
 
-#from csse_nodensity import CSSE
 from csse import CSSE
 from prepare_dataset import *
 
-
 def main():
     # Read Dataset German
-    df = prepare_german_dataset("synthetic_data_corrected.csv", "/Users/juliagontijolopes/Desktop/capsule-5194832/data/")
-
+    df = prepare_diabetes_dataset("diabetes.csv", "/data/")
 
     #Get the input features
     columns = df.columns
-    class_name = 'default' # default = 0 = "Good class" / default = 1 = "Bad class" 
+    class_name = 'Outcome' # Outcome = 0 = "Good class" / Outcome = 1 = "Bad class" 
     columns_tmp = list(columns)
     columns_tmp.remove(class_name)
 
-    x_train, x_test, y_train, y_test = train_test_split(df[columns_tmp], df[class_name], test_size=0.1)
-
-    subject = np.array([0.20, 7.25])
-    clss = 1
-    # Creating a DataFrame for subject to match the structure of x_test
-    subject_df = pd.DataFrame([subject], columns=x_train.columns)
-    # Inserting subject at the first position in x_test
-    x_train = pd.concat([subject_df, x_train]).reset_index(drop=True)
-    # Inserting clss at the first position in y_test
-    # Assuming y_test is a pandas Series. If it's a DataFrame, you might need to adjust accordingly.
-    y_train = pd.concat([pd.Series([clss]), y_train]).reset_index(drop=True)
+    x_train, x_test, y_train, y_test, idx_train, idx_test = train_test_split(df[columns_tmp], df[class_name], range(len(df)),test_size=0.1)
 
     model = RandomForestClassifier(n_estimators = 120, n_jobs=-1, random_state=0)  
     model.fit(x_train, y_train)
 
-    p = model.predict(x_train)
+    p = model.predict(x_test)
 
-    print(classification_report(y_train, p))
+    print(classification_report(y_test, p))
 
     #-------Begin Parameter Adjustment--------
        
@@ -62,26 +49,29 @@ def main():
     #mutation_proba = 0.1 #mutation probability
 
     # #Density Model parameters
-    # distance_threshold = 1
-    # density_threshold = np.logspace(-5, -2, 5)[0]
-    # howmanypaths=10
+    #distance_threshold = 1
+    #density_threshold = np.logspace(-5, -2, 5)[0]
+    #howmanypaths=10
 
     #Weights of objective function metrics
-    L1 = 1 #lambda 1 - Weight assigned the distance to the original instance
-    L2 = 1 #lambda 2 - Weight assigned the amount of changes needed in the original instance
+    L1 = 0.2 #lambda 1 - Weight assigned the distance to the original instance
+    L2 = 0.2 #lambda 2 - Weight assigned the amount of changes needed in the original instance
     L3 = 1 #lambda 3 - Weight assigned the density to original instance
 
     #copy the original instance
-    original_instance = x_train.iloc[X].copy() 
+    original_instance = x_test.iloc[X].copy()
+    original_instance_index = idx_test[0] # corresponding index of original instance on original df
        
     #-------End Parameter Adjustment--------
 
-    output_file_name = "output.txt"
+    folder = "output/"
+    output_file_name = folder + "output.txt"
     f = open(output_file_name, "w")
     f.write("L1 = " + str(L1) + "  L2 = " + str(L2) + "  L3 = " + str(L3) + "\n")
 
     print('Original instance - Class ' + str(p[X]) + '\n')
     print(original_instance)
+    print("Original Instance row number = " + str(original_instance_index))
     print('\nGetting counterfactuals...\n')
 
     f.write('\n -- Original instance - Class ' + str(p[X]) + ' -- \n')
@@ -90,17 +80,17 @@ def main():
     f.close()
 
     #Run CSSE - Method executed with default parameters except for the value of K.
-    explainerCSSE = CSSE(df[columns_tmp], model, K = K, L1 = L1, L2 = L2, L3 = L3)
+    explainerCSSE = CSSE(df[columns_tmp], df[class_name], model, K = K, L1 = L1, L2 = L2, L3 = L3)
     
-    contrafactual_set, solution = explainerCSSE.explain(original_instance, p[X], np.concatenate((x_train, x_test)), np.concatenate((y_train, y_test)), output_file_name) #Method returns the list of counterfactuals and the explanations generated from them
-    
+    contrafactual_set, solution = explainerCSSE.explain(original_instance, p[X], output_file_name, original_instance_index) #Method returns the list of counterfactuals and the explanations generated from them
+    # np.concatenate((x_train, x_test)), np.concatenate((y_train, y_test))
     #The method returns a list of counterfactual solutions, where each solution, in turn, is a change list (each change has the "column" and "value" to be changed). To implement another output format, see the "printResults" function
     explainerCSSE.printResults(solution)
 
     explainerCSSE.printResultsOutputFile(solution, output_file_name)
 
 
-    # ##### PCA PLOT BEGIN - when need to reduce dimension only
+    # ##### PCA PLOT BEGIN - when need to reduce density only
     # pca = PCA(n_components=2)  # Reduce to 2 dimensions for visualization
     # pca_result = pca.fit_transform(df[columns_tmp])
     # pca_df = pd.DataFrame(data=pca_result, columns=['PC1', 'PC2'])
@@ -145,3 +135,39 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+# if MOCKED_INDEX in idx_train:
+#         # If the instance is in x_train, get its position
+#         train_position = idx_train.index(MOCKED_INDEX)
+        
+#         # Get the instance from x_train and y_train
+#         instance_x = x_train.iloc[train_position]
+#         instance_y = y_train.iloc[train_position]
+        
+#         # Remove the instance from x_train and y_train
+#         x_train = x_train.drop(x_train.index[train_position])
+#         y_train = y_train.drop(y_train.index[train_position])
+        
+#         # Add the instance to the first position of x_test and y_test
+#         x_test = pd.concat([pd.DataFrame([instance_x], columns=x_test.columns), x_test], ignore_index=True)
+#         y_test = pd.concat([pd.Series([instance_y]), y_test.reset_index(drop=True)], ignore_index=True)
+        
+#     elif MOCKED_INDEX in idx_test:
+#         # If the instance is in x_test, get its position
+#         test_position = idx_test.index(MOCKED_INDEX)
+        
+#         # Get the instance from x_test and y_test
+#         instance_x = x_test.iloc[test_position]
+#         instance_y = y_test.iloc[test_position]
+        
+#         # Remove the instance from x_test and y_test
+#         x_test = x_test.drop(x_test.index[test_position])
+#         y_test = y_test.drop(y_test.index[test_position])
+        
+#         # Add the instance to the first position of x_test and y_test
+#         x_test = pd.concat([pd.DataFrame([instance_x], columns=x_test.columns), x_test], ignore_index=True)
+#         y_test = pd.concat([pd.Series([instance_y]), y_test.reset_index(drop=True)], ignore_index=True)

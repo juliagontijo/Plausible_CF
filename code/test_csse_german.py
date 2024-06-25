@@ -16,31 +16,15 @@ from prepare_dataset import *
 
 def main():
     # Read Dataset German
-    df = prepare_german_dataset("generated_german_credit.csv", "/Users/juliagontijolopes/Desktop/CSSE_Original/data/")
-    MOCKED_INDEX = 676
-    original_instance = df.iloc[MOCKED_INDEX].copy()
+    df = prepare_german_dataset("generated_german_credit.csv", "/data/")
 
     #Get the input features
     columns = df.columns
     class_name = 'default' # default = 0 = "Good class" / default = 1 = "Bad class" 
     columns_tmp = list(columns)
     columns_tmp.remove(class_name)
-    mask = df.index != MOCKED_INDEX
 
-    # x_train, x_test, y_train, y_test, idx_train, idx_test = train_test_split(df[columns_tmp], df[class_name], range(len(df)),test_size=0.1)
-    x_train, x_test, y_train, y_test, idx_train, idx_test = train_test_split(
-    df[mask][columns_tmp], df[mask][class_name], range(len(df[mask])),
-    test_size=0.1, random_state=42)
-
-    idx_train = list(idx_train)
-    idx_test = list(idx_test)
-
-    x_test = pd.concat([pd.DataFrame([original_instance[columns_tmp]]), x_test], ignore_index=True)
-    y_test = pd.concat([pd.Series([original_instance[class_name]]), y_test.reset_index(drop=True)], ignore_index=True)
-
-    # Update the test indices to reflect the original instance
-    idx_test = [MOCKED_INDEX] + [i for i in idx_test]
-
+    x_train, x_test, y_train, y_test, idx_train, idx_test = train_test_split(df[columns_tmp], df[class_name], range(len(df)),test_size=0.1)
 
     model = RandomForestClassifier(n_estimators = 120, n_jobs=-1, random_state=0)  
     model.fit(x_train, y_train)
@@ -76,8 +60,7 @@ def main():
 
     #copy the original instance
     original_instance = x_test.iloc[X].copy()
-    original_instance_index = MOCKED_INDEX
-    # original_instance_index = idx_test[0] # corresponding index of original instance on original df
+    original_instance_index = idx_test[0] # corresponding index of original instance on original df
        
     #-------End Parameter Adjustment--------
 
@@ -148,43 +131,5 @@ def main():
 
     print("done!")
 
-    #explainerCSSE.plot(x_train, y_train, contrafactual_set, original_instance)
-
 if __name__ == "__main__":
     main()
-
-
-
-
-
-# if MOCKED_INDEX in idx_train:
-#         # If the instance is in x_train, get its position
-#         train_position = idx_train.index(MOCKED_INDEX)
-        
-#         # Get the instance from x_train and y_train
-#         instance_x = x_train.iloc[train_position]
-#         instance_y = y_train.iloc[train_position]
-        
-#         # Remove the instance from x_train and y_train
-#         x_train = x_train.drop(x_train.index[train_position])
-#         y_train = y_train.drop(y_train.index[train_position])
-        
-#         # Add the instance to the first position of x_test and y_test
-#         x_test = pd.concat([pd.DataFrame([instance_x], columns=x_test.columns), x_test], ignore_index=True)
-#         y_test = pd.concat([pd.Series([instance_y]), y_test.reset_index(drop=True)], ignore_index=True)
-        
-#     elif MOCKED_INDEX in idx_test:
-#         # If the instance is in x_test, get its position
-#         test_position = idx_test.index(MOCKED_INDEX)
-        
-#         # Get the instance from x_test and y_test
-#         instance_x = x_test.iloc[test_position]
-#         instance_y = y_test.iloc[test_position]
-        
-#         # Remove the instance from x_test and y_test
-#         x_test = x_test.drop(x_test.index[test_position])
-#         y_test = y_test.drop(y_test.index[test_position])
-        
-#         # Add the instance to the first position of x_test and y_test
-#         x_test = pd.concat([pd.DataFrame([instance_x], columns=x_test.columns), x_test], ignore_index=True)
-#         y_test = pd.concat([pd.Series([instance_y]), y_test.reset_index(drop=True)], ignore_index=True)

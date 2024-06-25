@@ -16,7 +16,7 @@ from prepare_dataset import *
 
 def main():
     # Read Dataset German
-    df = prepare_breast_winsconsin_dataset("breast_winsconsin.csv", "/Users/juliagontijolopes/Desktop/CSSE_Original/data/")
+    df = prepare_breast_winsconsin_dataset("breast_winsconsin.csv", "/data/")
     MOCKED_INDEX = 672
     original_instance = df.iloc[MOCKED_INDEX].copy()
 
